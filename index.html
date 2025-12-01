@@ -7,13 +7,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap' );
         
-        /* --- NUEVA PALETA DE COLORES PASTEL --- */
         :root {
-            --bg-color: #fdfcfa; /* Fondo ligeramente crema */
-            --pastel-blue: #a7c4e4; /* Azul cielo pastel */
-            --pastel-lila: #d8c4e4; /* Lila pastel */
-            --pastel-sand: #f5f1ec; /* Arena para los botones neutros */
-            --text-dark: #5c5451; /* Un marrón suave en lugar de negro puro */
+            --bg-color: #fdfcfa; 
+            --pastel-lila: #d8c4e4; 
+            --pastel-sand: #f5f1ec; 
+            --text-dark: #5c5451; 
             --shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
         }
 
@@ -45,8 +43,7 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            /* Borde actualizado al nuevo azul pastel */
-            border: 4px solid var(--pastel-blue); 
+            border: 4px solid var(--pastel-lila); /* Borde cambiado a lila para coherencia */
             box-shadow: var(--shadow);
         }
         .profile-name {
@@ -57,7 +54,7 @@
         }
         .profile-handle {
             font-size: 1em;
-            color: #9e9895; /* Gris más suave */
+            color: #9e9895;
             margin-bottom: 5px;
         }
         .profile-location {
@@ -86,8 +83,6 @@
             font-size: 1.1em;
             font-weight: 600;
             border-radius: 12px;
-            /* Color de fondo neutro actualizado */
-            background-color: var(--pastel-sand); 
             color: var(--text-dark);
             box-shadow: var(--shadow);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -97,27 +92,35 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
         }
         
-        /* --- BOTONES DESTACADOS CON NUEVOS COLORES PASTEL --- */
-        .service-link.highlight-blue {
-            background-color: var(--pastel-blue);
-            color: var(--text-dark);
+        /* --- NUEVA ALTERNANCIA DE COLORES --- */
+        .service-item:nth-child(odd) .service-link {
+            background-color: var(--pastel-lila); /* Impar: Lila */
         }
-        .service-link.highlight-lila {
-            background-color: var(--pastel-lila);
-            color: var(--text-dark);
+        .service-item:nth-child(even) .service-link {
+            background-color: var(--pastel-sand); /* Par: Crudo */
         }
 
+        /* --- NUEVOS ESTILOS PARA EL TEXTO FINAL --- */
         .footer-text {
             margin-top: 40px;
             font-size: 0.95em;
             line-height: 1.6;
             color: var(--text-dark);
         }
-        .footer-text a {
-            color: var(--pastel-blue); /* Enlace del email actualizado */
+        .footer-text .main-cta {
+            font-size: 1.1em; /* Texto más grande */
+            font-weight: 700; /* En negrita */
+            display: block;
+            margin-bottom: 10px; /* Espacio debajo */
+        }
+        .footer-text .email-link {
+            display: block;
+            margin-top: 15px;
+            color: var(--text-dark);
             font-weight: 600;
             text-decoration: none;
         }
+
         .whatsapp-fab {
             position: fixed;
             bottom: 25px;
@@ -150,15 +153,15 @@
         <main>
             <h2 class="main-title">¿Cómo te puedo ayudar?</h2>
             <ul class="services-list">
-                <!-- IMPORTANTE: Reemplaza el # con tus enlaces reales -->
+                <!-- Los colores ahora se alternan automáticamente -->
                 <li class="service-item">
-                    <a href="#" class="service-link highlight-blue">Psicoterapia Individual</a>
+                    <a href="#" class="service-link">Psicoterapia Individual</a>
                 </li>
                 <li class="service-item">
                     <a href="#" class="service-link">Círculo de Bienestar</a>
                 </li>
                 <li class="service-item">
-                    <a href="#" class="service-link highlight-lila">Lectura de Tarot Individual</a>
+                    <a href="#" class="service-link">Lectura de Tarot Individual</a>
                 </li>
                 <li class="service-item">
                     <a href="#" class="service-link">Lectura de Eneagrama</a>
@@ -169,12 +172,11 @@
             </ul>
         </main>
 
+        <!-- TEXTO FINAL ACTUALIZADO -->
         <footer class="footer-text">
-            <p>Agendá tu llamada de claridad gratuita para conocernos mejor.  
-
-            Si sentís que alguno de estos espacios es para vos, escribime para reservar tu espacio.  
-
-            <a href="mailto:lic.carlascolaro@gmail.com">lic.carlascolaro@gmail.com</a></p>
+            <span class="main-cta">Agendá tu llamada de claridad gratuita para conocernos mejor.</span>
+            <p>Si sentís que alguno de estos espacios es para vos, escribime para reservar tu espacio.</p>
+            <a href="mailto:lic.carlascolaro@gmail.com" class="email-link">lic.carlascolaro@gmail.com</a>
         </footer>
     </div>
 
